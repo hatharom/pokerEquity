@@ -252,7 +252,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" fx:id="x4s">
+            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" fx:id="x2s">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -334,13 +334,13 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="162.0" layoutY="37.0" text="Player1" />
-      <Label layoutX="234.0" layoutY="37.0" text="Player2" />
+      <Label layoutX="145.0" layoutY="37.0" text="Player1" />
+      <Label layoutX="221.0" layoutY="37.0" text="Player2" />
       <Label layoutX="164.0" layoutY="127.0" text="Flop" />
       <Label layoutX="229.0" layoutY="127.0" text="Turn" />
       <Label layoutX="274.0" layoutY="127.0" text="River" />
-      <Button fx:id="clear" layoutX="154.0" layoutY="217.0" mnemonicParsing="false" text="Clear" />
-      <Button fx:id="evaluate" layoutX="240.0" layoutY="217.0" mnemonicParsing="false" onAction="#testing" text="Evaluate!" />
+      <Button fx:id="clear" layoutX="154.0" layoutY="217.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+      <Button fx:id="evaluate" layoutX="240.0" layoutY="217.0" mnemonicParsing="false" onAction="#evaluate" text="Evaluate!" />
       <ToggleButton fx:id="f1" layoutX="133.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
       <ToggleButton fx:id="f2" layoutX="161.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
       <ToggleButton fx:id="f3" layoutX="189.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
@@ -351,6 +351,49 @@
       <ToggleButton fx:id="p12" layoutX="181.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
       <ToggleButton fx:id="p11" layoutX="150.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
       <Label fx:id="errorLabel" layoutX="181.0" layoutY="262.0" prefHeight="17.0" prefWidth="113.0" />
+      <Label fx:id="p1result" layoutX="183.0" layoutY="37.0" prefHeight="20.0" prefWidth="37.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="p2result" layoutX="264.0" layoutY="37.0" prefHeight="20.0" prefWidth="37.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      
+        <fx:define>
+                    <ArrayList fx:id="p1ResultList" >
+                        <fx:reference source="p1highhand"/>
+                        <fx:reference source="p1onepair"/>                     
+                        <fx:reference source="p1twopair"/>
+                        <fx:reference source="p1threeofakind"/>                    
+                        <fx:reference source="p1straight"/>
+                        <fx:reference source="p1flush"/>
+                        <fx:reference source="p1fullhouse"/>
+                        <fx:reference source="p1fourofakind"/>
+                        <fx:reference source="p1straightflush"/>
+                  
+                    </ArrayList>
+                       <ArrayList fx:id="p2ResultList" >
+                           <fx:reference source="p2highhand"/>
+                        <fx:reference source="p2onepair"/>                     
+                        <fx:reference source="p2twopair"/>
+                        <fx:reference source="p2threeofakind"/>                    
+                        <fx:reference source="p2straight"/>
+                        <fx:reference source="p2flush"/>
+                        <fx:reference source="p2fullhouse"/>
+                        <fx:reference source="p2fourofakind"/>
+                        <fx:reference source="p2straightflush"/>
+                     
+                    </ArrayList>
+                </fx:define>
+      
+      
+      
+      
+      
+      
    </children>
    <padding>
       <Insets right="10.0" />

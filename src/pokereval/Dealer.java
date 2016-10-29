@@ -219,5 +219,7 @@ public class Dealer {
             return true;
         }
     }
-
+    public int getRunTime(){
+        return this.runTime;
+    }
 }
