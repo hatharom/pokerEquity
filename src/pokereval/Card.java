@@ -16,12 +16,18 @@ public class Card  {
         this.suit = suit;
     }
     
-    
+    /**
+     * Returns the appropriate element from the faces array
+     * @param face - int value of card faces(ie. card ranks)
+     * @return human readable form of cards faces
+     */
     public static String getTrueFace(int face){
         return faces[face];
     }
     public int getFace() {
         return this.face;
+        
+       
     }
 
     public int getSuit() {

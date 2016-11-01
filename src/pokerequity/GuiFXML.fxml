@@ -9,393 +9,413 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokerequity.Controller">
-   <children>
-      <FlowPane layoutX="21.0" layoutY="37.0" prefHeight="334.0" prefWidth="104.0">
-         <children>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="A" fx:id="xas">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#d72727" fx:id="xah">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#4845ee" fx:id="xad">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#39bf73" fx:id="xac">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="K" fx:id="xks">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#d72727" fx:id="xkh">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#4845ee" fx:id="xkd">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#39bf73" fx:id="xkc">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="Q" fx:id="xqs">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#d72727" fx:id="xqh">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#4845ee" fx:id="xqd">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#39bf73" fx:id="xqc">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="J" fx:id="xjs">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#d72727" fx:id="xjh">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#4845ee" fx:id="xjd">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#39bf73" fx:id="xjc">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="T" fx:id="xts">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#d72727" fx:id="xth">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#4845ee" fx:id="xtd">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#39bf73" fx:id="xtc">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="9" fx:id="x9s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#d72727" fx:id="x9h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#4845ee" fx:id="x9d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#39bf73" fx:id="x9c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="8" fx:id="x8s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#d72727" fx:id="x8h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#4845ee" fx:id="x8d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#39bf73" fx:id="x8c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="7" fx:id="x7s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#d72727" fx:id="x7h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#4845ee" fx:id="x7d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#39bf73" fx:id="x7c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="6" fx:id="x6s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#d72727" fx:id="x6h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#4845ee" fx:id="x6d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#39bf73" fx:id="x6c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="5" fx:id="x5s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#d72727" fx:id="x5h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#4845ee" fx:id="x5d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#39bf73" fx:id="x5c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="4" fx:id="x4s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#d72727" fx:id="x4h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#4845ee" fx:id="x4d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#39bf73" fx:id="x4c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="3" fx:id="x3s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#d72727" fx:id="x3h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#4845ee" fx:id="x3d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#39bf73" fx:id="x3c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" fx:id="x2s">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#d72727" fx:id="x2h">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#4845ee" fx:id="x2d">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#39bf73" fx:id="x2c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </ToggleButton>
-         </children></FlowPane>
-      <GridPane layoutX="371.0" layoutY="57.0" prefHeight="258.0" prefWidth="203.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="10.0" prefWidth="53.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="51.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Straight Flush" GridPane.rowIndex="1" />
-            <Label text="Four of a kind" GridPane.rowIndex="2" />
-            <Label text="Full House" GridPane.rowIndex="3" />
-            <Label text="Flush" GridPane.rowIndex="4" />
-            <Label text="Straight" GridPane.rowIndex="5" />
-            <Label text="Three of a Kind" GridPane.rowIndex="6" />
-            <Label text="Two Pair" GridPane.rowIndex="7" />
-            <Label text="One Pair" GridPane.rowIndex="8" />
-            <Label text="High Hand" GridPane.rowIndex="9" />
-            <Label text="Player1" GridPane.columnIndex="1" />
-            <Label text="Player2" GridPane.columnIndex="2" />
-            <Label fx:id="p1straightflush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="p1fourofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="p2fourofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label fx:id="p2straightflush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="p1fullhouse" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="p2fullhouse" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="p2flush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label fx:id="p1flush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="p1straight" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label fx:id="p2straight" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label fx:id="p1threeofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label fx:id="p2threeofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label fx:id="p1twopair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label fx:id="p2twopair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Label fx:id="p1onepair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label fx:id="p2onepair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Label fx:id="p1highhand" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label fx:id="p2highhand" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="9" />
-         </children>
-      </GridPane>
-      <Separator layoutX="327.0" layoutY="22.0" orientation="VERTICAL" prefHeight="364.0" prefWidth="0.0" />
-      <Label layoutX="424.0" layoutY="12.0" text="Hand Strength">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="55.0" layoutY="12.0" text="Cards">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="145.0" layoutY="37.0" text="Player1" />
-      <Label layoutX="221.0" layoutY="37.0" text="Player2" />
-      <Label layoutX="164.0" layoutY="127.0" text="Flop" />
-      <Label layoutX="229.0" layoutY="127.0" text="Turn" />
-      <Label layoutX="274.0" layoutY="127.0" text="River" />
-      <Button fx:id="clear" layoutX="154.0" layoutY="217.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
-      <Button fx:id="evaluate" layoutX="240.0" layoutY="217.0" mnemonicParsing="false" onAction="#evaluate" text="Evaluate!" />
-      <ToggleButton fx:id="f1" layoutX="133.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="f2" layoutX="161.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="f3" layoutX="189.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="r1" layoutX="272.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="t1" layoutX="227.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="p22" layoutX="254.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="p21" layoutX="224.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="p12" layoutX="181.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <ToggleButton fx:id="p11" layoutX="150.0" layoutY="64.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="28.0" />
-      <Label fx:id="errorLabel" layoutX="181.0" layoutY="262.0" prefHeight="17.0" prefWidth="113.0" />
-      <Label fx:id="p1result" layoutX="183.0" layoutY="37.0" prefHeight="20.0" prefWidth="37.0">
+    <children>
+        <FlowPane layoutX="21.0" layoutY="37.0" prefHeight="334.0" prefWidth="104.0">
+            <children>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="A" fx:id="xas">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#d72727" fx:id="xah">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#4845ee" fx:id="xad">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="A" textFill="#39bf73" fx:id="xac">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="K" fx:id="xks">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#d72727" fx:id="xkh">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#4845ee" fx:id="xkd">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="K" textFill="#39bf73" fx:id="xkc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="Q" fx:id="xqs">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#d72727" fx:id="xqh">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#4845ee" fx:id="xqd">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="Q" textFill="#39bf73" fx:id="xqc">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="J" fx:id="xjs">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#d72727" fx:id="xjh">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#4845ee" fx:id="xjd">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="J" textFill="#39bf73" fx:id="xjc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="T" fx:id="xts">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#d72727" fx:id="xth">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#4845ee" fx:id="xtd">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="T" textFill="#39bf73" fx:id="xtc">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="9" fx:id="x9s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#d72727" fx:id="x9h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#4845ee" fx:id="x9d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="9" textFill="#39bf73" fx:id="x9c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="8" fx:id="x8s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#d72727" fx:id="x8h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#4845ee" fx:id="x8d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="8" textFill="#39bf73" fx:id="x8c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="7" fx:id="x7s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#d72727" fx:id="x7h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#4845ee" fx:id="x7d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="7" textFill="#39bf73" fx:id="x7c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="6" fx:id="x6s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#d72727" fx:id="x6h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#4845ee" fx:id="x6d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="6" textFill="#39bf73" fx:id="x6c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="5" fx:id="x5s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#d72727" fx:id="x5h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#4845ee" fx:id="x5d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="5" textFill="#39bf73" fx:id="x5c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="4" fx:id="x4s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#d72727" fx:id="x4h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#4845ee" fx:id="x4d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="4" textFill="#39bf73" fx:id="x4c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="3" fx:id="x3s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#d72727" fx:id="x3h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#4845ee" fx:id="x3d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="3" textFill="#39bf73" fx:id="x3c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="2" fx:id="x2s">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#d72727" fx:id="x2h">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#4845ee" fx:id="x2d">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton mnemonicParsing="false" onAction="#setHand" prefHeight="25.0" prefWidth="25.0" text="2" textFill="#39bf73" fx:id="x2c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </ToggleButton>
+            </children>
+        </FlowPane>
+        <GridPane layoutX="371.0" layoutY="57.0" prefHeight="258.0" prefWidth="203.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="10.0" prefWidth="53.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="51.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Straight Flush" GridPane.rowIndex="1" />
+                <Label text="Four of a kind" GridPane.rowIndex="2" />
+                <Label text="Full House" GridPane.rowIndex="3" />
+                <Label text="Flush" GridPane.rowIndex="4" />
+                <Label text="Straight" GridPane.rowIndex="5" />
+                <Label text="Three of a Kind" GridPane.rowIndex="6" />
+                <Label text="Two Pair" GridPane.rowIndex="7" />
+                <Label text="One Pair" GridPane.rowIndex="8" />
+                <Label text="High Hand" GridPane.rowIndex="9" />
+                <Label text="Player1" GridPane.columnIndex="1" />
+                <Label text="Player2" GridPane.columnIndex="2" />
+                <Label fx:id="p1straightflush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="p1fourofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="p2fourofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label fx:id="p2straightflush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label fx:id="p1fullhouse" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label fx:id="p2fullhouse" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Label fx:id="p2flush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label fx:id="p1flush" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label fx:id="p1straight" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label fx:id="p2straight" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Label fx:id="p1threeofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label fx:id="p2threeofakind" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Label fx:id="p1twopair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label fx:id="p2twopair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Label fx:id="p1onepair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <Label fx:id="p2onepair" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <Label fx:id="p1highhand" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label fx:id="p2highhand" prefHeight="15.0" prefWidth="40.0" text="         " GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            </children>
+        </GridPane>
+        <Separator layoutX="327.0" layoutY="22.0" orientation="VERTICAL" prefHeight="364.0" prefWidth="0.0" />
+        <Label layoutX="424.0" layoutY="12.0" text="Hand Strength">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="55.0" layoutY="12.0" text="Cards">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="149.0" layoutY="37.0" text="Player1" />
+        <Label layoutX="236.0" layoutY="37.0" text="Player2" />
+        <Label layoutX="164.0" layoutY="127.0" text="Flop" />
+        <Label layoutX="229.0" layoutY="127.0" text="Turn" />
+        <Label layoutX="274.0" layoutY="127.0" text="River" />
+        <Button fx:id="clear" layoutX="154.0" layoutY="217.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+        <Button fx:id="evaluate" layoutX="229.0" layoutY="217.0" mnemonicParsing="false" onAction="#evaluate" text="Evaluate!" />
+        <ToggleButton fx:id="f1" layoutX="133.0" layoutY="152.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="f2" layoutX="161.0" layoutY="152.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="f3" layoutX="189.0" layoutY="152.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="r1" layoutX="272.0" layoutY="152.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="t1" layoutX="227.0" layoutY="152.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="p2h2" layoutX="258.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="p2h1" layoutX="224.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="p1h2" layoutX="173.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <ToggleButton fx:id="p1h1" layoutX="140.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
+        <Label fx:id="errorLabel" layoutX="181.0" layoutY="262.0" prefHeight="17.0" prefWidth="113.0" />
+        <Label fx:id="p1result" layoutX="150.0" layoutY="54.0" prefHeight="20.0" prefWidth="37.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="p2result" layoutX="237.0" layoutY="54.0" prefHeight="20.0" prefWidth="37.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+      <Label fx:id="tieresult" layoutX="205.0" layoutY="55.0" prefHeight="17.0" prefWidth="28.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="p2result" layoutX="264.0" layoutY="37.0" prefHeight="20.0" prefWidth="37.0">
+      <Label fx:id="tielabel" layoutX="205.0" layoutY="36.0" prefHeight="7.0" prefWidth="28.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
       
         <fx:define>
-                    <ArrayList fx:id="p1ResultList" >
-                        <fx:reference source="p1highhand"/>
-                        <fx:reference source="p1onepair"/>                     
-                        <fx:reference source="p1twopair"/>
-                        <fx:reference source="p1threeofakind"/>                    
-                        <fx:reference source="p1straight"/>
-                        <fx:reference source="p1flush"/>
-                        <fx:reference source="p1fullhouse"/>
-                        <fx:reference source="p1fourofakind"/>
-                        <fx:reference source="p1straightflush"/>
-                  
-                    </ArrayList>
-                       <ArrayList fx:id="p2ResultList" >
-                           <fx:reference source="p2highhand"/>
-                        <fx:reference source="p2onepair"/>                     
-                        <fx:reference source="p2twopair"/>
-                        <fx:reference source="p2threeofakind"/>                    
-                        <fx:reference source="p2straight"/>
-                        <fx:reference source="p2flush"/>
-                        <fx:reference source="p2fullhouse"/>
-                        <fx:reference source="p2fourofakind"/>
-                        <fx:reference source="p2straightflush"/>
+            <ArrayList fx:id="p1ResultList" >
+                <fx:reference source="p1highhand"/>
+                <fx:reference source="p1onepair"/>                     
+                <fx:reference source="p1twopair"/>
+                <fx:reference source="p1threeofakind"/>                    
+                <fx:reference source="p1straight"/>
+                <fx:reference source="p1flush"/>
+                <fx:reference source="p1fullhouse"/>
+                <fx:reference source="p1fourofakind"/>
+                <fx:reference source="p1straightflush"/>
+      
+            </ArrayList>
+            <ArrayList fx:id="p2ResultList" >
+                <fx:reference source="p2highhand"/>
+                <fx:reference source="p2onepair"/>                     
+                <fx:reference source="p2twopair"/>
+                <fx:reference source="p2threeofakind"/>                    
+                <fx:reference source="p2straight"/>
+                <fx:reference source="p2flush"/>
+                <fx:reference source="p2fullhouse"/>
+                <fx:reference source="p2fourofakind"/>
+                <fx:reference source="p2straightflush"/>
+                                   
+            </ArrayList>
+            
+              <ArrayList fx:id="cardContainers" >
+                <fx:reference source="p1h1"/>
+                <fx:reference source="p1h2"/>                     
+                <fx:reference source="p2h1"/>
+                <fx:reference source="p2h2"/>                    
+                <fx:reference source="f1"/>
+                <fx:reference source="f2"/>
+                <fx:reference source="f3"/>
+                <fx:reference source="t1"/>
+                <fx:reference source="r1"/>
                      
-                    </ArrayList>
-                </fx:define>
-      
-      
-      
-      
-      
-      
-   </children>
-   <padding>
-      <Insets right="10.0" />
-   </padding>
+            </ArrayList>
+            
+        </fx:define>
+                                   
+    </children>
+    <padding>
+        <Insets right="10.0" />
+    </padding>
 </AnchorPane>

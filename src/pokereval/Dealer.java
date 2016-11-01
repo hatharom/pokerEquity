@@ -3,6 +3,7 @@ package pokereval;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Random;
 
 public class Dealer {
@@ -26,9 +27,11 @@ public class Dealer {
         }
         initMap(resultMap1);
         runHand(hand);
+
     }
 
     public Dealer(String holeCard1, String holeCard2, String board) {
+
         if (holeCard1 == null || holeCard1.length() != 4 || holeCard2 == null || holeCard2.length() != 4) {
             throw new IllegalArgumentException();
         }
@@ -47,28 +50,26 @@ public class Dealer {
         runPvpHand(hand1, hand2);
     }
 
-    public HashMap<String, Integer> getPlayer1ResultMap() {
-        return this.resultMap1;
-    }
-
-    public HashMap<String, Integer> getPlayer2ResultMap() {
-        return this.resultMap2;
-    }
-
-    public int[] getPvpResult() {
-        return this.pvpResult;
-    }
-
+    /**
+     * Does a full analysis for the given hand, ending with a totally filled out resultMap.
+     * Used only in a case of ONE player.*
+     * @param hand - hand to be analyzed
+     */
     private void runHand(Card[] hand) {
         if (hand.length == 7) {
             Hand h = new Hand(hand);
             fillUpResultMap(h, resultMap1);
+            assistFillUp(resultMap1);
         } else {
             runMore(hand);
         }
-        System.out.println(resultMap1);
     }
 
+    /**
+     * Auxiliary method when more cards need to be dealt.
+     *
+     * @param hand -hand to be analyzed
+     */
     private void runMore(Card[] hand) {
         Card[] completedHand = new Card[7];
         System.arraycopy(hand, 0, completedHand, 0, hand.length);
@@ -81,15 +82,53 @@ public class Dealer {
             Hand h = new Hand(completedHand);
             fillUpResultMap(h, resultMap1);
         }
+    }
+    
+    /**
+     * Does a full analysis for the given hand, ending with two totally filled out
+     * resultMap. Used only in a case of TWO players.
+     *
+     * @param hand1 -first player's hand to be analyzed
+     * @param hand2 -second player's hand to be analyzed
+     */
+        private void runPvpHand(Card[] hand1, Card[] hand2) {
+        if (hand1.length == 7) {
+            Hand h1 = new Hand(hand1);
+            Hand h2 = new Hand(hand2);
+            int actualWinner = h1.compareTo(h2);
+
+            switch (actualWinner) {
+                case 1:
+                    pvpResult[0] = runTime;
+                    break;
+                case -1:
+                    pvpResult[1] = runTime;
+                    break;
+                case 0:
+                    pvpResult[2] = runTime;
+                    break;
+            }
+            fillUpResultMap(h1, resultMap1);
+            fillUpResultMap(h2, resultMap2);
+            assistFillUp(resultMap1);
+            assistFillUp(resultMap2);
+        } else {
+            runMorePvp(hand1, hand2);
+        }
 
     }
-
+    /**
+     * Auxiliary method when more cards need to be dealt.
+     *
+     * @param hand1 -first player's hand to be analyzed
+     * @param hand2 -second player's hand to be analyzed
+     */
     private void runMorePvp(Card[] hand1, Card[] hand2) {
         Card[] completedHand1 = new Card[7];
         Card[] completedHand2 = new Card[7];
         System.arraycopy(hand1, 0, completedHand1, 0, hand1.length);
         System.arraycopy(hand2, 0, completedHand2, 0, hand2.length);
-        
+
         Card riverCard;
         Card turnCard;
         for (int i = 0; i < runTime; i++) {
@@ -110,6 +149,7 @@ public class Dealer {
             fillUpResultMap(h1, resultMap1);
             fillUpResultMap(h2, resultMap2);
             int actualWinner = h1.compareTo(h2);
+
             switch (actualWinner) {
                 case 1:
                     pvpResult[0]++;
@@ -118,7 +158,6 @@ public class Dealer {
                     pvpResult[1]++;
                     break;
                 case 0:
-                    System.out.println("tie!!!!-----  "+h1 +" vs "+h2+"  "+h1.getStringHandValue());
                     pvpResult[2]++;
                     break;
             }
@@ -126,6 +165,12 @@ public class Dealer {
 
     }
 
+    /**
+     * Used for generating a random card.
+     *
+     * @param usedCards - alreasy drawn cards that shouldnt be generated
+     * @return a random Card
+     */
     private Card getRndCard(Card[] usedCards) {
         Card generatedCard = new Card(0, 0);
         Random rndFace = new Random();
@@ -136,19 +181,15 @@ public class Dealer {
         return generatedCard;
     }
 
-    private void runPvpHand(Card[] hand1, Card[] hand2) {
-        if (hand1.length == 7) {
-            Hand h1 = new Hand(hand1);
-            Hand h2 = new Hand(hand2);
-            System.out.println(h1.compareTo(h2));
-            fillUpResultMap(h1, resultMap1);
-            fillUpResultMap(h2, resultMap2);
-        } else {
-            runMorePvp(hand1, hand2);
-        }
 
-    }
 
+    /**
+     * Fills up a resultMap
+     *
+     * @param actualHand - hand which value has to be stored.
+     * @param resultMap - the map that elements have to increased according to
+     * the actualHand's value
+     */
     private void fillUpResultMap(Hand actualHand, HashMap<String, Integer> resultMap) {
         int count = 0;
 
@@ -195,6 +236,22 @@ public class Dealer {
 
     }
 
+    /**
+     * an auxiliary method for filling up the resultmap in case when there is
+     * only one run of the hand(ie. river card is already given by the user).
+     * Fillen up with the total number of runTime to be easier to parse by the
+     * invoker.
+     *
+     * @param resultMap - map to be filled up with result
+     */
+    private void assistFillUp(HashMap<String, Integer> resultMap) {
+        for (Map.Entry<String, Integer> entry : resultMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                resultMap.put(entry.getKey(), runTime);
+            }
+        }
+    }
+
     private void initMap(HashMap resultMap) {
         resultMap.put("straightflush", 0);
         resultMap.put("fourofakind", 0);
@@ -208,6 +265,11 @@ public class Dealer {
 
     }
 
+    /**
+     *
+     * @param cards - array of card to be examined for possible duplication
+     * @return true if hand is valid ie doesnt contains duplicated hands
+     */
     private boolean checkDuplicatedInput(Card[] cards) {
         HashSet<Card> hs = new HashSet<Card>();
         for (int i = 0; i < cards.length; i++) {
@@ -219,7 +281,21 @@ public class Dealer {
             return true;
         }
     }
-    public int getRunTime(){
+
+    public HashMap<String, Integer> getPlayer1ResultMap() {
+        return this.resultMap1;
+    }
+
+    public HashMap<String, Integer> getPlayer2ResultMap() {
+        return this.resultMap2;
+    }
+
+    public int[] getPvpResult() {
+        return this.pvpResult;
+    }
+
+    public int getRunTime() {
         return this.runTime;
     }
+
 }

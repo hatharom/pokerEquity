@@ -1,5 +1,6 @@
 package pokereval;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -9,7 +10,9 @@ public class Hand implements Comparable<Hand> {
     private Card[] cards;
     public int[] pair;
     private int flushType;
+    private int flush;
     private int straightType;
+    private int straightFlushType;
     private int[] handValue = new int[6];
 
     public Hand(Card[] cards) {
@@ -20,14 +23,22 @@ public class Hand implements Comparable<Hand> {
         evaluate();
     }
 
-
+    /**
+     * builds and stores the whole result for the current hand
+     */
     private void evaluate() {
         evaluatePairs();
         this.flushType = evaluateFlush();
         this.straightType = evaluateStraight();
+        this.straightFlushType = evaluateStraightFlush();
         parseHand();
     }
 
+    /**
+     * fills up the pair array with occurence of the given card e.g.
+     * [0,1,2,0,0,0,0,1,0,2,0,0,0] == 3449JJ
+     *
+     */
     private void evaluatePairs() {
         int[] pairCounter = new int[13];
 
@@ -42,6 +53,9 @@ public class Hand implements Comparable<Hand> {
         int higherFaceValue = 0;
         int lowerFaceValue = 0;
 
+        /*
+         *fills up the pair array with occurences and storing the values of faces in the same time
+         */
         for (int i = 0; i < pairCounter.length; i++) {
             if (pairCounter[i] >= cardOccurence1) {
                 if (cardOccurence1 > 1) {
@@ -57,10 +71,16 @@ public class Hand implements Comparable<Hand> {
             }
 
         }
-    //    System.out.println(cardOccurence1 + " of " + higherFaceValue + " and " + cardOccurence2 + " of " + lowerFaceValue);
 
     }
 
+    /**
+     * returns the type of the flush by searching for the highest value among
+     * faces with the same suit.
+     *
+     * @return an int that represents the highest card in a flush returns -1 if
+     * flush isnt present
+     */
     private int evaluateFlush() {
         int flushType = -1;
         int[] suitCounter = new int[4];
@@ -77,14 +97,65 @@ public class Hand implements Comparable<Hand> {
                         ts.add(cards[j].getFace());
                     }
                 }
-          //      System.out.println("flush cards:" + ts);
                 flushType = (Integer) ts.last();
+                flush = i;
                 break;
             }
         }
         return flushType;
     }
 
+    /**
+     * returns the type of the straightflush by traversing the facevalues with
+     * the same suit of the hand.
+     *
+     * @return an int that represent the face value of the highest card in a
+     * straightflush. returns -1 if straightflush isnt present.
+     *
+     */
+    private int evaluateStraightFlush() {
+        if (this.flushType < 0 || this.straightType < 0) {
+            return -1;
+        }
+        int straightFlushType = -1;
+        if (flushType == straightType) {
+            return straightType;
+        }
+        TreeSet<Integer> straightFaces = new TreeSet<Integer>();
+        for (Card card : cards) {
+            if (card.getSuit() == flush) {
+                straightFaces.add(card.getFace());
+            }
+        }
+        int straightCounter = 1;
+        int actualFace = -1;
+        int previousFace = -1;
+        int lockedStraightCounter = 0;
+        for (Integer face : straightFaces) {
+            actualFace = face;
+            if (actualFace == previousFace + 1) {
+                straightCounter++;
+                if (straightCounter >= 5) {
+                    lockedStraightCounter = straightCounter;
+                    straightFlushType = actualFace;
+                }
+            } else {
+                straightCounter = 1;
+            }
+            previousFace = actualFace;
+
+        }
+
+        return straightFlushType;
+    }
+
+    /**
+     * returns the type of the straight by traversing the facevalues of the hand
+     *
+     * @return an int that represent the face value of the highest card in a
+     * straight. returns -1 if straight isnt present.
+     *
+     */
     private int evaluateStraight() {
 
         int straightType = -1;
@@ -98,12 +169,10 @@ public class Hand implements Comparable<Hand> {
         if (straightFaces.size() < 5) {
             return straightType;
         }
-        //  System.out.println(straightFaces);
         int actualFace = -1;
-        int previousFace = -1;
+        int previousFace = -10;
         for (Integer face : straightFaces) {
             actualFace = face;
-            //    System.out.println("comparing:"+actualFace+"vs"+previousFace);
             if (actualFace == previousFace + 1) {
                 straightCounter++;
                 if (straightCounter >= 5) {
@@ -116,10 +185,20 @@ public class Hand implements Comparable<Hand> {
             previousFace = actualFace;
 
         }
-        //  System.out.println(lockedStraightCounter+"...."+straightType);
+        if (straightType == -1) {
+            Integer[] aceHighStraight = {0, 1, 2, 3, 12};
+            if (straightFaces.containsAll(Arrays.asList(aceHighStraight))) {
+                straightType = 3;
+            }
+        }
         return straightType;
     }
 
+    /**
+     * fills up the handValue array with the help of auxiliar primitives,arrays
+     * of cardOccurence,straightFlushType,flushType,straightType,pair
+     *
+     */
     private void parseHand() {
         int[] highCards = new int[7];
         int index = 0;
@@ -133,7 +212,7 @@ public class Hand implements Comparable<Hand> {
                 index++;
             }
             if (pair[i] > 1 && pair[i] > cardOccurence1) {
-                
+
                 cardOccurence2 = cardOccurence1;
                 lowerFaceValue = higherFaceValue;
                 cardOccurence1 = pair[i];
@@ -145,7 +224,14 @@ public class Hand implements Comparable<Hand> {
             }
 
         }
-  //      System.out.println(cardOccurence1 + " of " + higherFaceValue + " and " + cardOccurence2 + " of " + lowerFaceValue);
+
+        //stroing straightFlush
+        if (straightFlushType >= 0) {
+            handValue[0] = 8;
+            handValue[1] = straightFlushType;
+            return;
+        }
+
         //storing four of a kind
         if (cardOccurence1 == 4) {
             handValue[0] = 7;
@@ -192,16 +278,17 @@ public class Hand implements Comparable<Hand> {
             return;
         }
         //stroing  pairs
-        if (cardOccurence1 == 2 && cardOccurence2 == 1) {
+        if (cardOccurence1 == 2 && cardOccurence2 <= 1) {
             handValue[0] = 1;
             handValue[1] = higherFaceValue;
             handValue[2] = highCards[0];
             handValue[3] = highCards[1];
             handValue[4] = highCards[2];
+
             return;
         }
         //stroing  highcard
-        if (cardOccurence1 == 1 && cardOccurence2 == 1) {
+        if (cardOccurence1 <= 1 && cardOccurence2 <= 1) {
             handValue[0] = 0;
             handValue[1] = highCards[0];
             handValue[2] = highCards[1];
@@ -209,6 +296,7 @@ public class Hand implements Comparable<Hand> {
             handValue[4] = highCards[3];
             return;
         }
+
     }
 
     @Override
@@ -220,23 +308,21 @@ public class Hand implements Comparable<Hand> {
         return hand;
     }
 
-    // helper method for development
-    public void display() {
-        System.out.println(this.toString());
-        System.out.println("pais: " + Arrays.toString(this.pair));
-        System.out.println("flush: " + this.flushType);
-        System.out.println("straight: " + this.straightType);
-        System.out.println("total handvalue: " + Arrays.toString(handValue));
-    }
-
-    /*
+    /**
      * returns the final handValue array of the hand
      */
     public int[] getHandValue() {
         return this.handValue;
     }
 
+    /**
+     * Returns the values of the hand in readable form by reading it from the
+     * handValue array
+     *
+     * @return a String that describes the final value of the hand
+     */
     public String getStringHandValue() {
+
         if (handValue[0] == 8) {
             return Card.getTrueFace(handValue[1]) + " high straighflush";
         }
@@ -270,10 +356,11 @@ public class Hand implements Comparable<Hand> {
 
     @Override
     public int compareTo(Hand hand2) {
+
         for (int i = 0; i < 6; i++) {
             if (this.handValue[i] > hand2.handValue[i]) {
                 return 1;
-            } else if (this.handValue[i] < hand2.handValue[i]) {                
+            } else if (this.handValue[i] < hand2.handValue[i]) {
                 return -1;
             }
         }
