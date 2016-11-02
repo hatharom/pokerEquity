@@ -1,11 +1,12 @@
 package pokereval;
 
-class CardConverter {
+public class CardConverter {
 
     /**
     * returns a card array converted from a String
     * *@param hand - hand waiting for conversion from String to Card array 
-    *@return a Card array that symbolizes the hand          
+    *@return a Card array that symbolizes the hand      
+    * @throws IllegalArgumentException
     */
     public static Card[] convertHand(String hand) {
         if (hand == null || hand.length() > 14 || hand.length() < 10) {
@@ -23,7 +24,8 @@ class CardConverter {
     /**
      * returns a Card object transformed from a string
      * @param card- single card with a lengh of 2 ("8s")
-     * @return Card object      
+     * @return Card object     
+     * @throws IllegalArgumentException
      */
     private static Card convertCard(String card) {
         Card convertedCard = null;

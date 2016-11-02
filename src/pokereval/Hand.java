@@ -74,7 +74,7 @@ public class Hand implements Comparable<Hand> {
         if (handValue[0] == 1) {
             return "pair of " + Card.getTrueFace(handValue[1]);
         }
-        if (handValue[0] == 6) {
+        if (handValue[0] == 0) {
             return Card.getTrueFace(handValue[1]) + " high ";
         }
         return null;
