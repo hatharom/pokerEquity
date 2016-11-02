@@ -28,42 +28,44 @@ public class Controller {
     Label tieresult;
     @FXML
     Label tielabel;
-
-    float p1WinPercentage;
+     float p1WinPercentage;
     float p2WinPercentage;
     float tiePercentage;
+    String[] p1Results = new String[9];
+    String[] p2Results = new String[9];
     String p1HoleCard = "";
     String p2HoleCard = "";
     String board = "";
     HashMap<String, String> selectedCards;
     ArrayList<ToggleButton> clickedCardButtons;
     ToggleButton activeCardContainer = null;
-    String[] p1Results = new String[9];
-    String[] p2Results = new String[9];
+    Dealer d;
+    View view = new View(this);
 
-    public Controller() {
-
+    public Controller() {        
         init();
     }
 
     public void evaluate() {
         if (!buildHand()) {
-            raiseErrorMsg();
+            view.raiseErrorMsg();
         } else {
-            Dealer d = null;
+           
             if (p2HoleCard.length() > 0) {
                 d = new Dealer(p1HoleCard, p2HoleCard, board);
 
             } else {
                 d = new Dealer(p1HoleCard, board);
-            }           
-            parseResult(d);
-            displayResult(d);
-
+            }
+            view.parseResult(d);
+            view.displayResult(d);
         }
     }
+
     /**
-     * converts the elements of selectedCards array into Strings that can be passed by.
+     * converts the elements of selectedCards array into Strings that can be
+     * passed by.
+     *
      * @return true in case of a successfull handbuilding
      */
     private boolean buildHand() {
@@ -81,8 +83,9 @@ public class Controller {
                 + selectedCards.get("t1") + selectedCards.get("r1");
         return true;
     }
+
     /**
-     * 
+     *
      * @return true if both flop and player1 hand exists
      */
     private boolean isSelectionValid() {
@@ -93,15 +96,16 @@ public class Controller {
             return false;
         }
         if (selectedCards.get("p2h1") == "" ^ selectedCards.get("p2h2") == "") {
-            
+
         }
         return true;
     }
 
     /**
-     * creates or deletes assignments of the given card button and
-     * modifies the associated cardcontainer accordingly
-     * @param event - 
+     * creates or deletes assignments of the given card button and modifies the
+     * associated cardcontainer accordingly
+     *
+     * @param event -
      */
     public void setHand(ActionEvent event) {
         Object source = event.getSource();
@@ -136,6 +140,7 @@ public class Controller {
 
     /**
      * returns the clicked button's id
+     *
      * @param clicked - the container that is clicked
      * @return a String that represent the clicked button's id.
      */
@@ -149,10 +154,11 @@ public class Controller {
         return null;
     }
 
-     /**
-     * bind or unbind the clicked button to the active card container.
-     * put or deletes the text(that represents the card) from it.
-     * @param event - 
+    /**
+     * bind or unbind the clicked button to the active card container. put or
+     * deletes the text(that represents the card) from it.
+     *
+     * @param event -
      */
     public void setActiveCardContainer(ActionEvent event) {
         Object source = event.getSource();
@@ -172,80 +178,6 @@ public class Controller {
         }
     }
 
-    /**
-     * Converts the Dealer Object's results to consumable form by the Gui
-     * @param d - A Dealer object of which the displayable elements will be created.
-     */
-    private void parseResult(Dealer d) {
-        int runTime = d.getRunTime();
-        int[] resultArray = d.getPvpResult();
-        this.p1WinPercentage = ((float) resultArray[0] / (runTime / 100));
-        this.p2WinPercentage = ((float) resultArray[1] / (runTime / 100));
-        this.tiePercentage = ((float) resultArray[2] / (runTime / 100));
-
-        HashMap<String, Integer> p1 = d.getPlayer1ResultMap();
-
-        p1Results[0] = Float.toString((float) p1.get("highcard") / (runTime / 100));
-        p1Results[1] = Float.toString((float) p1.get("pair") / (runTime / 100));
-        p1Results[2] = Float.toString((float) p1.get("twopair") / (runTime / 100));
-        p1Results[3] = Float.toString((float) p1.get("threeofakind") / (runTime / 100));
-        p1Results[4] = Float.toString((float) p1.get("straight") / (runTime / 100));
-        p1Results[5] = Float.toString((float) p1.get("flush") / (runTime / 100));
-        p1Results[6] = Float.toString((float) p1.get("fullhouse") / (runTime / 100));
-        p1Results[7] = Float.toString((float) p1.get("fourofakind") / (runTime / 100));
-        p1Results[8] = Float.toString((float) p1.get("straightflush") / (runTime / 100));
-        if (d.getPlayer2ResultMap() != null) {
-            HashMap<String, Integer> p2 = d.getPlayer2ResultMap();
-            p2Results[0] = Float.toString((float) p2.get("highcard") / (runTime / 100));
-            p2Results[1] = Float.toString((float) p2.get("pair") / (runTime / 100));
-            p2Results[2] = Float.toString((float) p2.get("twopair") / (runTime / 100));
-            p2Results[3] = Float.toString((float) p2.get("threeofakind") / (runTime / 100));
-            p2Results[4] = Float.toString((float) p2.get("straight") / (runTime / 100));
-            p2Results[5] = Float.toString((float) p2.get("flush") / (runTime / 100));
-            p2Results[6] = Float.toString((float) p2.get("fullhouse") / (runTime / 100));
-            p2Results[7] = Float.toString((float) p2.get("fourofakind") / (runTime / 100));
-            p2Results[8] = Float.toString((float) p2.get("straightflush") / (runTime / 100));
-        }
-    }
-
-    /**
-     * binding the results to the corresponding part of the Gui
-     * @param d 
-     */
-    private void displayResult(Dealer d) {
-        if (d.getPlayer2ResultMap() != null) {
-
-            p1result.setText(String.format("%.2f", this.p1WinPercentage));
-            p2result.setText(String.format("%.2f", this.p2WinPercentage));
-            tielabel.setText("tie");
-            tielabel.setTextFill(Color.BROWN);
-            tieresult.setText(String.format("%.2f", this.tiePercentage));
-            tieresult.setTextFill(Color.BROWN);
-            if (p1WinPercentage > p2WinPercentage) {
-                p1result.setTextFill(Color.GREEN);
-                p2result.setTextFill(Color.RED);
-            } else {
-                p1result.setTextFill(Color.RED);
-                p2result.setTextFill(Color.GREEN);
-            }
-            for (int i = 0; i < this.p2ResultList.size(); i++) {
-                this.p2ResultList.get(i).setText(p2Results[i]);
-            }
-        }
-
-        for (int i = 0; i < this.p1ResultList.size(); i++) {
-
-            this.p1ResultList.get(i).setText(p1Results[i]);
-        }
-        errorLabel.setText("");
-    }
-
-    
-    private void raiseErrorMsg() {
-        this.errorLabel.setText("choose more cards!");
-        this.errorLabel.setTextFill(Color.RED);
-    }
-
     private void init() {
         selectedCards = new HashMap<String, String>();
         clickedCardButtons = new ArrayList<ToggleButton>();
@@ -262,26 +194,16 @@ public class Controller {
     }
 
     /**
-     * clears the Gui
+     * clears the temporary storage lists and invokes View's clear on Gui
      */
     public void clear() {
-        p1result.setText("");
-        p2result.setText("");
-        tieresult.setText("");
-        for (int i = 0; i < this.p1ResultList.size(); i++) {
-            this.p1ResultList.get(i).setText("");
-            this.p2ResultList.get(i).setText("");
-        }
-        for (int i = 0; i < cardContainers.size(); i++) {
-            this.cardContainers.get(i).setText("");
-            this.cardContainers.get(i).setSelected(false);
-        }
+        view.clear();
         for (int i = 0; i < clickedCardButtons.size(); i++) {
             clickedCardButtons.get(i).setDisable(false);
             clickedCardButtons.get(i).setSelected(false);
         }
         selectedCards.clear();
-        this.errorLabel.setText("");
         init();
     }
+
 }

@@ -352,12 +352,12 @@
         <ToggleButton fx:id="p1h2" layoutX="173.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
         <ToggleButton fx:id="p1h1" layoutX="140.0" layoutY="76.0" mnemonicParsing="false" onAction="#setActiveCardContainer" prefHeight="39.0" prefWidth="28.0" />
         <Label fx:id="errorLabel" layoutX="181.0" layoutY="262.0" prefHeight="17.0" prefWidth="113.0" />
-        <Label fx:id="p1result" layoutX="150.0" layoutY="54.0" prefHeight="20.0" prefWidth="37.0">
+        <Label fx:id="p1result" layoutX="150.0" layoutY="54.0" prefHeight="20.0" prefWidth="47.0">
             <font>
                 <Font size="13.0" />
             </font>
         </Label>
-        <Label fx:id="p2result" layoutX="237.0" layoutY="54.0" prefHeight="20.0" prefWidth="37.0">
+        <Label fx:id="p2result" layoutX="237.0" layoutY="54.0" prefHeight="20.0" prefWidth="47.0">
             <font>
                 <Font size="13.0" />
             </font>

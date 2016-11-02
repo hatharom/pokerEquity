@@ -11,15 +11,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+import pokereval.*;
 public class PokerEquity extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("GuiFXML.fxml"));
         
-        Scene scene = new Scene(root);
-        
+        Scene scene = new Scene(root);      
+       
         stage.setScene(scene);
         stage.show();
     }

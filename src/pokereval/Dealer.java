@@ -3,13 +3,14 @@ package pokereval;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Random;
 
 public class Dealer {
 
-    private HashMap<String, Integer> resultMap1 = new HashMap<String, Integer>();
-    private HashMap<String, Integer> resultMap2 = null;
+    private LinkedHashMap<String, Integer> resultMap1 = new LinkedHashMap<String, Integer>();
+    private LinkedHashMap<String, Integer> resultMap2 = null;
     private int[] pvpResult = new int[3];
     private int runTime = 1000000;
 
@@ -38,7 +39,7 @@ public class Dealer {
         if (board == null || board.length() < 6 || board.length() > 10 || board.length() % 2 != 0) {
             throw new IllegalArgumentException();
         }
-        resultMap2 = new HashMap<String, Integer>();
+        resultMap2 = new LinkedHashMap<String, Integer>();
         Card[] hand1 = CardConverter.convertHand(holeCard1 + board);
         Card[] hand2 = CardConverter.convertHand(holeCard2 + board);
         if (!checkDuplicatedInput(hand1) || !checkDuplicatedInput(hand1)) {
@@ -51,8 +52,10 @@ public class Dealer {
     }
 
     /**
-     * Does a full analysis for the given hand, ending with a totally filled out resultMap.
-     * Used only in a case of ONE player.*
+     * Does a full analysis for the given hand, ending with a totally filled out
+     * resultMap. Used only in a case of ONE player.
+     *
+     *
      * @param hand - hand to be analyzed
      */
     private void runHand(Card[] hand) {
@@ -83,15 +86,15 @@ public class Dealer {
             fillUpResultMap(h, resultMap1);
         }
     }
-    
+
     /**
-     * Does a full analysis for the given hand, ending with two totally filled out
-     * resultMap. Used only in a case of TWO players.
+     * Does a full analysis for the given hand, ending with two totally filled
+     * out resultMap. Used only in a case of TWO players.
      *
      * @param hand1 -first player's hand to be analyzed
      * @param hand2 -second player's hand to be analyzed
      */
-        private void runPvpHand(Card[] hand1, Card[] hand2) {
+    private void runPvpHand(Card[] hand1, Card[] hand2) {
         if (hand1.length == 7) {
             Hand h1 = new Hand(hand1);
             Hand h2 = new Hand(hand2);
@@ -117,6 +120,7 @@ public class Dealer {
         }
 
     }
+
     /**
      * Auxiliary method when more cards need to be dealt.
      *
@@ -181,8 +185,6 @@ public class Dealer {
         return generatedCard;
     }
 
-
-
     /**
      * Fills up a resultMap
      *
@@ -190,7 +192,7 @@ public class Dealer {
      * @param resultMap - the map that elements have to increased according to
      * the actualHand's value
      */
-    private void fillUpResultMap(Hand actualHand, HashMap<String, Integer> resultMap) {
+    private void fillUpResultMap(Hand actualHand, LinkedHashMap<String, Integer> resultMap) {
         int count = 0;
 
         switch (actualHand.getHandValue()[0]) {
@@ -244,7 +246,7 @@ public class Dealer {
      *
      * @param resultMap - map to be filled up with result
      */
-    private void assistFillUp(HashMap<String, Integer> resultMap) {
+    private void assistFillUp(LinkedHashMap<String, Integer> resultMap) {
         for (Map.Entry<String, Integer> entry : resultMap.entrySet()) {
             if (entry.getValue() == 1) {
                 resultMap.put(entry.getKey(), runTime);
@@ -252,17 +254,16 @@ public class Dealer {
         }
     }
 
-    private void initMap(HashMap resultMap) {
-        resultMap.put("straightflush", 0);
-        resultMap.put("fourofakind", 0);
-        resultMap.put("fullhouse", 0);
-        resultMap.put("flush", 0);
-        resultMap.put("straight", 0);
-        resultMap.put("threeofakind", 0);
-        resultMap.put("twopair", 0);
-        resultMap.put("pair", 0);
+    private void initMap(LinkedHashMap resultMap) {
         resultMap.put("highcard", 0);
-
+        resultMap.put("pair", 0);
+        resultMap.put("twopair", 0);
+        resultMap.put("threeofakind", 0);
+        resultMap.put("straight", 0);
+        resultMap.put("flush", 0);
+        resultMap.put("fullhouse", 0);
+        resultMap.put("fourofakind", 0);
+        resultMap.put("straightflush", 0);
     }
 
     /**
@@ -282,11 +283,11 @@ public class Dealer {
         }
     }
 
-    public HashMap<String, Integer> getPlayer1ResultMap() {
+    public LinkedHashMap<String, Integer> getPlayer1ResultMap() {
         return this.resultMap1;
     }
 
-    public HashMap<String, Integer> getPlayer2ResultMap() {
+    public LinkedHashMap<String, Integer> getPlayer2ResultMap() {
         return this.resultMap2;
     }
 
