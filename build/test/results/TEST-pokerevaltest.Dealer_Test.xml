@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="zolipc" name="pokerevaltest.Dealer_Test" skipped="0" tests="5" time="0.566" timestamp="2016-11-02T02:20:59">
+<testsuite errors="0" failures="0" hostname="zolipc" name="pokerevaltest.Dealer_Test" skipped="0" tests="5" time="0.545" timestamp="2016-11-02T02:23:46">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="HU" />
@@ -67,7 +67,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner pokerevaltest.Dealer_Test skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\test\results\TEST-pokerevaltest.Dealer_Test.xml crashfile=C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\junitvmwatcher6621284357717215107.properties propsfile=C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\junit3170720630921570314.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner pokerevaltest.Dealer_Test skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\test\results\TEST-pokerevaltest.Dealer_Test.xml crashfile=C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\junitvmwatcher6374900766925818196.properties propsfile=C:\Users\zolih\Documents\NetBeansProjects\PokerEquity\build\junit6989705966444483286.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -448,11 +448,11 @@
     <property name="jcplatform.javacard_default" value="C:\Users\zolih\AppData\Roaming\NetBeans\8.0.2\config\Services\Platforms\org-netbeans-api-java-Platform\javacard_default.jcplatform" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="E:\Progi\NetBeans 8.0.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="pokerevaltest.Dealer_Test" name="testGetResultMap" time="0.499" />
-  <testcase classname="pokerevaltest.Dealer_Test" name="testGetPvpResult" time="0.0" />
-  <testcase classname="pokerevaltest.Dealer_Test" name="testDealerConstructor" time="0.001" />
-  <testcase classname="pokerevaltest.Dealer_Test" name="testDealerConstructor3" time="0.0" />
+  <testcase classname="pokerevaltest.Dealer_Test" name="testGetResultMap" time="0.478" />
+  <testcase classname="pokerevaltest.Dealer_Test" name="testGetPvpResult" time="0.001" />
+  <testcase classname="pokerevaltest.Dealer_Test" name="testDealerConstructor" time="0.0" />
   <testcase classname="pokerevaltest.Dealer_Test" name="testDealerConstructor2" time="0.0" />
+  <testcase classname="pokerevaltest.Dealer_Test" name="testDealerConstructor3" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
