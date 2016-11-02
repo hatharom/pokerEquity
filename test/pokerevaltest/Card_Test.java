@@ -11,10 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import pokereval.Card;
 
-/**
- *
- * @author zolih
- */
+
 public class Card_Test {
     
 

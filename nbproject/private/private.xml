@@ -4,9 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Poker">
             <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokereval/Dealer.java</file>
-            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokerequity/Controller.java</file>
-            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/tester/NewMain.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokereval/HandEvaluator.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokereval/Card.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/test/pokerevaltest/Dealer_Test.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/test/pokerevaltest/CardConverter_Test.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/test/pokerevaltest/Card_Test.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/test/pokerevaltest/Hand_Test.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokereval/CardConverter.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokerequity/PokerEquity.java</file>
             <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokereval/Hand.java</file>
+            <file>file:/C:/Users/zolih/Documents/NetBeansProjects/PokerEquity/src/pokerequity/View.java</file>
         </group>
     </open-files>
 </project-private>
