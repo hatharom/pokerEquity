@@ -117,8 +117,7 @@ public class Controller {
                 /*revert the selection of a card ,
                 that will be no longer binded to a certain container*/
                 ToggleButton prevCard = getRevokedCard();
-                if (prevCard!=null) {
-                    System.out.println(prevCard.getId());
+                if (prevCard!=null) {                 
                     prevCard.setSelected(false);
                 }
                 

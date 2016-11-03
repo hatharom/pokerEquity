@@ -58,7 +58,6 @@ public class View {
         }
     }
 
-   
     /**
      * binding the results to the corresponding part of the Gui
      *
@@ -87,6 +86,9 @@ public class View {
             for (int i = 0; i < controller.p2ResultList.size(); i++) {
                 controller.p2ResultList.get(i).setText("");
             }
+            controller.p2result.setText("");
+            controller.tielabel.setText("");
+            controller.tieresult.setText("");
         }
 
         for (int i = 0; i < controller.p1ResultList.size(); i++) {
