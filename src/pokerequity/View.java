@@ -83,6 +83,10 @@ public class View {
             for (int i = 0; i < controller.p2ResultList.size(); i++) {
                 controller.p2ResultList.get(i).setText(controller.p2Results[i]);
             }
+        } else {
+            for (int i = 0; i < controller.p2ResultList.size(); i++) {
+                controller.p2ResultList.get(i).setText("");
+            }
         }
 
         for (int i = 0; i < controller.p1ResultList.size(); i++) {

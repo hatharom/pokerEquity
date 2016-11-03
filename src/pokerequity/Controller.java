@@ -28,7 +28,7 @@ public class Controller {
     Label tieresult;
     @FXML
     Label tielabel;
-     float p1WinPercentage;
+    float p1WinPercentage;
     float p2WinPercentage;
     float tiePercentage;
     String[] p1Results = new String[9];
@@ -42,7 +42,7 @@ public class Controller {
     Dealer d;
     View view = new View(this);
 
-    public Controller() {        
+    public Controller() {
         init();
     }
 
@@ -50,7 +50,7 @@ public class Controller {
         if (!buildHand()) {
             view.raiseErrorMsg();
         } else {
-           
+
             if (p2HoleCard.length() > 0) {
                 d = new Dealer(p1HoleCard, p2HoleCard, board);
 
@@ -96,7 +96,7 @@ public class Controller {
             return false;
         }
         if (selectedCards.get("p2h1") == "" ^ selectedCards.get("p2h2") == "") {
-
+            return false;
         }
         return true;
     }
@@ -110,9 +110,20 @@ public class Controller {
     public void setHand(ActionEvent event) {
         Object source = event.getSource();
         ToggleButton clicked = (ToggleButton) source;
+
         if (clicked.isSelected()) {
             if (activeCardContainer != null) {
-
+                
+                /*revert the selection of a card ,
+                that will be no longer binded to a certain container*/
+                ToggleButton prevCard = getRevokedCard();
+                if (prevCard!=null) {
+                    System.out.println(prevCard.getId());
+                    prevCard.setSelected(false);
+                }
+                
+                /*passes the new cardbutton to the current
+                selection and updates container attributes*/
                 activeCardContainer.setText(clicked.getText());
                 activeCardContainer.setTextFill(clicked.getTextFill());
                 selectedCards.put(activeCardContainer.getId(), clicked.getId().substring(1));
@@ -137,6 +148,22 @@ public class Controller {
         }
 
     }
+
+    /**
+     * Search clickedCardButton for the specified bounded card
+     * @return a ToggleButton that is currently binded to a container
+     */
+    private ToggleButton getRevokedCard() {
+        String prevCardId = "x"+selectedCards.get(activeCardContainer.getId());
+        ToggleButton prevCard = null;
+        for (ToggleButton b : clickedCardButtons) {
+            if (b.getId().equalsIgnoreCase(prevCardId)) {
+                prevCard = b;
+            }
+        }
+        return prevCard;
+    }
+
 
     /**
      * returns the clicked button's id
